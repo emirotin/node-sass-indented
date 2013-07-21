@@ -211,9 +211,9 @@ Iterate over document lines and parse them
             for i in [0...doc.length]
                 line = new Line doc[i], i
 
-Empty lines are at level 0
+Non-indented lines are at level 0
 
-                if not line.lineContent
+                if not line.indentChar
                     line.level = 0
                 else
 
@@ -262,7 +262,6 @@ If the line is indented go through the stack to find ist parent line
                     if line.level
                         while stack.length and stack[stack.length-1].level != line.level - 1
                             stack.pop()
-                        if not stack.length
                         stack[stack.length-1].children.push line
 
 If the line is not empty, remember it and add to the list of significant lines
