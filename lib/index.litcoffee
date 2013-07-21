@@ -24,7 +24,7 @@ Export converter object
 
     module.exports = converter = require './converter'
 
-TODO: When ran as program do CLI job
+Convert the test file and print the result to the console
 
     path = require 'path'
     console.log converter.convert path.resolve __dirname + '/../test/test.sass'
